@@ -29,6 +29,8 @@ public class Bill {
    */
     public boolean addTip() {
         if (tipAdded) {
+            return false;
+        } else {
             if (customers >= 8) {
                 totalCost = totalCost * 1.3;
             } else if (customers >= 4) {
@@ -38,9 +40,8 @@ public class Bill {
             } else {
                 totalCost = totalCost * 1.20;
             }
+            tipAdded = true;
             return true;
-        } else {
-            return false;
         }
     }
 
